@@ -1,6 +1,6 @@
 {
   "name": "@nathan-adk/ctx-forge-wbd",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Zero-resident, reversible context forge for WorkBuddy (WBD). Maximizes token savings and context compression via anchored incremental summary + offloaded bodies + on-demand handles. WBD host only.",
   "type": "commonjs",
   "main": "lib/index.js",

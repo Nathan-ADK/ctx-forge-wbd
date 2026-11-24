@@ -42,9 +42,13 @@ ctx-forge rm --session-key <键>                   # 删除会话归档
 ctx-forge deep --session-key <键> --level max     # 深度锻造冲 95%+
 ```
 
-## 归档目录
-优先级：`CTXFORGE_HOME` 环境变量 > 本机 `wbd-home.json` 覆盖文件 / 同级 WBD 根（会话落其 `sessions/` 子目录）> `~/.ctxforge`（用户主目录，跨机器可移植）。
-`wbd-home.json` 为可选的本机配置文件（发布包不含）；不配置时自动回退主目录。
+## 归档目录（自适应，零硬编码）
+优先级：
+1. `CTXFORGE_HOME` 环境变量；
+2. 包内可选 `home.json`（形如 `{"home":"/你的/目录"}`）——安装时可自行创建，发布包不含；
+3. `~/.ctxforge`（用户主目录，默认值，任何机器通用）。
+
+无需任何配置即可使用；如需指定归档位置，用上面任一方式覆盖。归档数据落在所选目录的 `sessions/` 子目录。
 
 ## 环境变量
 `CTXFORGE_HOME` · `CTXFORGE_BUDGET`(默认600) · `CTXFORGE_LEVEL`(lite|balanced|max, 默认lite) · `CTXFORGE_GATE`(on/off, 默认on) · `CTXFORGE_LINE_CHARS`(默认40)

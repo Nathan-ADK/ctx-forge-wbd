@@ -14,12 +14,9 @@ const path = require('path');
 function defaultRoot() {
   if (process.env.CTXFORGE_HOME) return process.env.CTXFORGE_HOME;
   try {
-    const lock = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'wbd-home.json'), 'utf8'));
-    if (lock.home && fs.existsSync(path.join(lock.home, 'sessions'))) return lock.home;
+    const cfg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'home.json'), 'utf8'));
+    if (cfg.home && typeof cfg.home === 'string') return cfg.home;
   } catch (_) {}
-  const driveRoot = path.resolve(__dirname, '..', '..', '..', '..', '..');
-  const wbdRoot = path.join(driveRoot, 'AI-项目', 'WBD');
-  try { if (fs.existsSync(path.join(wbdRoot, 'sessions'))) return wbdRoot; } catch (_) {}
   return path.join(os.homedir(), '.ctxforge');
 }
 const ROOT = defaultRoot();
