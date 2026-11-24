@@ -1,0 +1,26 @@
+{
+  "name": "@nathan-adk/ctx-forge-wbd",
+  "version": "1.0.0",
+  "description": "Zero-resident, reversible context forge for WorkBuddy (WBD). Maximizes token savings and context compression via anchored incremental summary + offloaded bodies + on-demand handles. WBD host only.",
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "bin": { "ctx-forge": "./bin/ctx-forge.js", "cf": "./bin/ctx-forge.js" },
+  "files": [
+    "bin/",
+    "lib/",
+    "workbuddy/",
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": { "test": "node test/forge-test.js" },
+  "license": "MIT",
+  "author": "Nathan-ADK",
+  "keywords": ["context", "compaction", "token", "memory", "workbuddy", "ctx-forge", "zero-resident"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathan-ADK/ctx-forge-wbd.git"
+  },
+  "homepage": "https://github.com/Nathan-ADK/ctx-forge-wbd#readme",
+  "engines": { "node": ">=18" }
+}
